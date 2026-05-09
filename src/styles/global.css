@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --color-pink-accent: #FF9398;
+  --font-space: 'Space Grotesk', sans-serif;
+  --font-chinese: 'Noto Sans SC', sans-serif;
+}
+
+html {
+  font-family: var(--font-chinese);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-space);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF9398;
+}
+
+/* Blog card hover effect */
+.blog-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(255, 147, 152, 0.15);
+}
+
+/* Image hover zoom */
+.img-zoom {
+  overflow: hidden;
+}
+
+.img-zoom img {
+  transition: transform 0.5s ease;
+}
+
+.img-zoom:hover img {
+  transform: scale(1.05);
+}
+
+/* Tag style */
+.tag {
+  @apply inline-block px-3 py-1 text-xs font-medium bg-white/10 hover:bg-[#FF9398]/20 text-white/70 hover:text-[#FF9398] rounded-full transition-colors cursor-pointer;
+}
+
+/* Button style */
+.btn-primary {
+  @apply inline-flex items-center gap-2 px-6 py-3 bg-[#FF9398] hover:bg-[#ff7a80] text-black font-semibold rounded-xl transition-colors;
+}

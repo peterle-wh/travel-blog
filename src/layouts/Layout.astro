@@ -1,0 +1,49 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = '旅行博客 - 用文字记录世界' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-black text-white font-sans antialiased">
+    <nav class="fixed top-4 left-4 right-4 z-50">
+      <div class="max-w-6xl mx-auto flex items-center justify-between bg-black/80 backdrop-blur-md border border-white/10 rounded-2xl px-6 py-4">
+        <a href="/" class="text-xl font-bold tracking-tight">
+          <span class="text-[#FF9398]">Salt</span> in our Hair
+        </a>
+        <div class="flex items-center gap-6">
+          <a href="/" class="text-white/70 hover:text-white transition-colors">首页</a>
+          <a href="/blog" class="text-white/70 hover:text-white transition-colors">旅行攻略</a>
+          <a href="/about" class="text-white/70 hover:text-white transition-colors">关于我们</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="pt-24">
+      <slot />
+    </main>
+
+    <footer class="border-t border-white/10 py-12 mt-20">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <p class="text-white/50 text-sm">
+          © 2026 Salt in our Hair. 用文字记录世界 🦞
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

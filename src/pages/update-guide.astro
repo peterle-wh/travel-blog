@@ -1,0 +1,197 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="更新指南 - Salt in our Hair">
+  <section class="py-12 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl font-bold mb-4">🦞 网站更新指南</h1>
+      <p class="text-white/50 mb-8">通过我更新网站的完整手册</p>
+
+      <!-- Quick Navigation -->
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-6 mb-12">
+        <h2 class="text-lg font-bold mb-4">📋 可更新的板块</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <a href="#homepage" class="flex items-center gap-3 p-4 bg-white/5 hover:bg-white/10 rounded-xl transition-colors">
+            <span class="text-2xl">🏠</span>
+            <div>
+              <span class="font-medium">首页</span>
+              <p class="text-white/40 text-sm">Hero、精选文章、目的地</p>
+            </div>
+          </a>
+          <a href="#blog" class="flex items-center gap-3 p-4 bg-white/5 hover:bg-white/10 rounded-xl transition-colors">
+            <span class="text-2xl">✈️</span>
+            <div>
+              <span class="font-medium">旅行攻略</span>
+              <p class="text-white/40 text-sm">文章列表、分类筛选</p>
+            </div>
+          </a>
+          <a href="#article" class="flex items-center gap-3 p-4 bg-white/5 hover:bg-white/10 rounded-xl transition-colors">
+            <span class="text-2xl">📝</span>
+            <div>
+              <span class="font-medium">文章内容</span>
+              <p class="text-white/40 text-sm">新文章、修改旧文章</p>
+            </div>
+          </a>
+          <a href="#about" class="flex items-center gap-3 p-4 bg-white/5 hover:bg-white/10 rounded-xl transition-colors">
+            <span class="text-2xl">👤</span>
+            <div>
+              <span class="font-medium">关于我们</span>
+              <p class="text-white/40 text-sm">团队介绍、故事、联系方式</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Homepage Section -->
+      <div id="homepage" class="mb-16 scroll-mt-32">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="text-3xl">🏠</span>
+          <h2 class="text-2xl font-bold">首页更新</h2>
+        </div>
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-6">
+          <div class="border-l-4 border-[#FF9398] pl-6">
+            <h3 class="font-bold text-lg mb-2">精选文章（Featured Posts）</h3>
+            <p class="text-white/50 text-sm mb-3">显示在首页的3篇推荐文章</p>
+            <code class="text-sm text-[#FF9398]">文件位置: src/pages/index.astro</code>
+            <p class="text-white/40 text-sm mt-2">更新内容：文章标题、摘要、封面图、分类、日期</p>
+          </div>
+          <div class="border-l-4 border-[#FF9398] pl-6">
+            <h3 class="font-bold text-lg mb-2">目的地（Destinations）</h3>
+            <p class="text-white/50 text-sm mb-3">首页显示的目的地标签</p>
+            <code class="text-sm text-[#FF9398]">文件位置: src/pages/index.astro</code>
+            <p class="text-white/40 text-sm mt-2">更新内容：国家名称、图标、对应文章数量</p>
+          </div>
+          <div class="border-l-4 border-[#FF9398] pl-6">
+            <h3 class="font-bold text-lg mb-2">Hero文案</h3>
+            <p class="text-white/50 text-sm mb-3">首页顶部的大标题和副标题</p>
+            <code class="text-sm text-[#FF9398]">文件位置: src/pages/index.astro</code>
+            <p class="text-white/40 text-sm mt-2">更新内容：主标题、副标题、描述文字</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blog Section -->
+      <div id="blog" class="mb-16 scroll-mt-32">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="text-3xl">✈️</span>
+          <h2 class="text-2xl font-bold">旅行攻略页更新</h2>
+        </div>
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-6">
+          <div class="border-l-4 border-[#FF9398] pl-6">
+            <h3 class="font-bold text-lg mb-2">文章列表</h3>
+            <p class="text-white/50 text-sm mb-3">所有旅行攻略的展示页面</p>
+            <code class="text-sm text-[#FF9398]">文件位置: src/pages/blog/index.astro</code>
+            <p class="text-white/40 text-sm mt-2">更新内容：添加/删除文章、修改摘要、更新时间</p>
+          </div>
+          <div class="border-l-4 border-[#FF9398] pl-6">
+            <h3 class="font-bold text-lg mb-2">分类标签</h3>
+            <p class="text-white/50 text-sm mb-3">文章分类筛选器</p>
+            <code class="text-sm text-[#FF9398]">文件位置: src/pages/blog/index.astro</code>
+            <p class="text-white/40 text-sm mt-2">更新内容：添加新的分类标签（如：日本、意大利等）</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Article Section -->
+      <div id="article" class="mb-16 scroll-mt-32">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="text-3xl">📝</span>
+          <h2 class="text-2xl font-bold">文章内容更新</h2>
+        </div>
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-6">
+          <div class="border-l-4 border-[#FF9398] pl-6">
+            <h3 class="font-bold text-lg mb-2">新建文章</h3>
+            <p class="text-white/50 text-sm mb-3">创建新的旅行攻略文章</p>
+            <code class="text-sm text-[#FF9398]">文件位置: src/pages/blog/[slug].astro</code>
+            <p class="text-white/40 text-sm mt-2">操作：告诉我要写什么主题，我生成完整的 Markdown 文章</p>
+          </div>
+          <div class="border-l-4 border-[#FF9398] pl-6">
+            <h3 class="font-bold text-lg mb-2">修改现有文章</h3>
+            <p class="text-white/50 text-sm mb-3">更新或润色已有文章</p>
+            <code class="text-sm text-[#FF9398]">文件位置: 文章对应的 .astro 文件</code>
+            <p class="text-white/40 text-sm mt-2">操作：把文章发给我，说出要改什么，我帮你修改</p>
+          </div>
+          <div class="border-l-4 border-[#FF9398] pl-6">
+            <h3 class="font-bold text-lg mb-2">文章格式说明</h3>
+            <p class="text-white/50 text-sm mb-3">文章需要包含的信息</p>
+            <div class="bg-black/50 rounded-xl p-4 mt-2 text-sm font-mono">
+              <p class="text-white/40">---</p>
+              <p class="text-white/70">title: 文章标题</p>
+              <p class="text-white/70">date: 2026-05-10</p>
+              <p class="text-white/70">category: 目的地分类</p>
+              <p class="text-white/70">cover: 封面图URL</p>
+              <p class="text-white/70">readTime: 阅读时间</p>
+              <p class="text-white/40">---</p>
+              <p class="text-white/30 mt-2">正文内容...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- About Section -->
+      <div id="about" class="mb-16 scroll-mt-32">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="text-3xl">👤</span>
+          <h2 class="text-2xl font-bold">关于我们页更新</h2>
+        </div>
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-6">
+          <div class="border-l-4 border-[#FF9398] pl-6">
+            <h3 class="font-bold text-lg mb-2">团队信息</h3>
+            <p class="text-white/50 text-sm mb-3">博主名称、国家、简介</p>
+            <code class="text-sm text-[#FF9398]">文件位置: src/pages/about.astro</code>
+            <p class="text-white/40 text-sm mt-2">更新内容：名字、来自哪里、个人介绍</p>
+          </div>
+          <div class="border-l-4 border-[#FF9398] pl-6">
+            <h3 class="font-bold text-lg mb-2">数据统计</h3>
+            <p class="text-white/50 text-sm mb-3">成立年份、浏览量、粉丝数</p>
+            <code class="text-sm text-[#FF9398]">文件位置: src/pages/about.astro</code>
+            <p class="text-white/40 text-sm mt-2">更新内容：since 年份、页面浏览量、社交媒体粉丝数</p>
+          </div>
+          <div class="border-l-4 border-[#FF9398] pl-6">
+            <h3 class="font-bold text-lg mb-2">联系方式</h3>
+            <p class="text-white/50 text-sm mb-3">商务合作邮箱</p>
+            <code class="text-sm text-[#FF9398]">文件位置: src/pages/about.astro</code>
+            <p class="text-white/40 text-sm mt-2">更新内容：邮箱地址、联系说明</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- How to Request -->
+      <div class="bg-gradient-to-b from-[#FF9398]/20 to-transparent border border-[#FF9398]/30 rounded-2xl p-8">
+        <h2 class="text-2xl font-bold mb-4">🚀 如何让我更新？</h2>
+        <p class="text-white/50 mb-6">直接告诉我你要更新哪个部分，我来完成其余工作</p>
+        <div class="space-y-4 text-sm">
+          <div class="flex items-start gap-4">
+            <span class="text-[#FF9398] font-bold">1.</span>
+            <div>
+              <p class="font-medium">说清楚要更新什么</p>
+              <p class="text-white/40">例：「把首页精选文章换成日本的攻略」</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="text-[#FF9398] font-bold">2.</span>
+            <div>
+              <p class="font-medium">提供新内容</p>
+              <p class="text-white/40">例：「帮我写一篇大阪3日游的攻略」</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="text-[#FF9398] font-bold">3.</span>
+            <div>
+              <p class="font-medium">我生成完整内容</p>
+              <p class="text-white/40">我会给你可以直接用的代码或文案</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="text-[#FF9398] font-bold">4.</span>
+            <div>
+              <p class="font-medium">你复制到 GitHub 发布</p>
+              <p class="text-white/40">Netlify 自动构建生效</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

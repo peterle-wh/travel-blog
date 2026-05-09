@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const team = {
+  names: 'Hannah & Nick',
+  from: '荷兰',
+  story: '从一个旅行分享给朋友家人的小项目，成长为每年800万页面浏览量的旅行博客。我们专注于深度旅行指南、可持续旅行和数字游民生活。',
+  since: '2016',
+  followers: '370,000+'
+};
+
+const values = [
+  {
+    title: '慢旅行',
+    desc: '我们宁可在一个目的地待三周，也不要一周跑三个国家。深入体验比打卡更重要。'
+  },
+  {
+    title: '可持续旅行',
+    desc: '环保出行、减少塑料、支持本地。旅行不应该以牺牲环境为代价。'
+  },
+  {
+    title: '真实内容',
+    desc: '每一篇攻略都来自真实踩坑。我们不接受不真实的产品推广。'
+  }
+];
+---
+
+<Layout title="关于我们 - Salt in our Hair">
+  <section class="py-12 px-6">
+    <div class="max-w-4xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <p class="text-[#FF9398] text-sm font-medium tracking-widest uppercase mb-4">About Us</p>
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">{team.names}</h1>
+        <p class="text-white/50 text-lg">{team.from} · 旅行博主 · 数字游民</p>
+      </div>
+
+      <!-- Story Section -->
+      <div class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-[#FF9398]">我们的故事</h2>
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-8">
+          <p class="text-white/70 leading-relaxed text-lg">{team.story}</p>
+          <div class="flex gap-8 mt-8 pt-8 border-t border-white/10">
+            <div>
+              <span class="text-3xl font-bold text-[#FF9398]">{team.since}</span>
+              <p class="text-white/40 text-sm">成立至今</p>
+            </div>
+            <div>
+              <span class="text-3xl font-bold text-[#FF9398]">4000万+</span>
+              <p class="text-white/40 text-sm">页面浏览量</p>
+            </div>
+            <div>
+              <span class="text-3xl font-bold text-[#FF9398]">{team.followers}</span>
+              <p class="text-white/40 text-sm">Instagram粉丝</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Values -->
+      <div class="mb-16">
+        <h2 class="text-2xl font-bold mb-6 text-[#FF9398]">我们的理念</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          {values.map(value => (
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+              <h3 class="text-xl font-bold mb-3">{value.title}</h3>
+              <p class="text-white/50 text-sm leading-relaxed">{value.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="text-center bg-gradient-to-b from-[#FF9398]/10 to-transparent border border-white/10 rounded-2xl p-8">
+        <h2 class="text-2xl font-bold mb-4">联系我们</h2>
+        <p class="text-white/50 mb-6">合作咨询、商务合作、媒体采访</p>
+        <a href="mailto:hello@saltinourhair.com" class="btn-primary inline-flex">
+          发送邮件
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

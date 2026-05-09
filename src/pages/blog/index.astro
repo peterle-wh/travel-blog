@@ -1,0 +1,97 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const posts = [
+  {
+    title: '巴厘岛7天6夜完整攻略',
+    excerpt: '从乌布到库塔，探索这座神庙之岛的隐藏秘境。私人泳池、稻田下午茶、火山日出，一个都不能少。',
+    cover: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80',
+    category: '印度尼西亚',
+    date: '2026-05-01',
+    readTime: '8 min'
+  },
+  {
+    title: '日本京都赏樱指南',
+    excerpt: '避开人潮的私藏机位，清水寺夜樱、的岚山竹林、祇园小巷，和服租赁经验分享。',
+    cover: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=80',
+    category: '日本',
+    date: '2026-04-15',
+    readTime: '6 min'
+  },
+  {
+    title: '冰岛自驾：环岛精华10日',
+    excerpt: '追逐极光、冰川徒步、火山探险。南海岸+斯奈山半岛+东部峡湾，租车攻略+住宿推荐。',
+    cover: 'https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=800&q=80',
+    category: '冰岛',
+    date: '2026-03-20',
+    readTime: '12 min'
+  },
+  {
+    title: '意大利阿马尔菲海岸自驾',
+    excerpt: '沿着悬崖公路一路向南，波斯塔马里纳小镇，拉维罗全景别墅，舌尖上的意大利南部。',
+    cover: 'https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800&q=80',
+    category: '意大利',
+    date: '2026-02-28',
+    readTime: '7 min'
+  },
+  {
+    title: '葡萄牙里斯本3日漫游',
+    excerpt: '28路电车、黄昏索缆角、贝伦蛋挞。葡式海鲜饭+本地葡萄酒，城市的复古与前卫。',
+    cover: 'https://images.unsplash.com/photo-1555881400-74d7acaacd8b?w=800&q=80',
+    category: '葡萄牙',
+    date: '2026-01-15',
+    readTime: '5 min'
+  },
+  {
+    title: '墨西哥尤卡坦半岛洞穴潜水',
+    excerpt: 'Cenote 天然井探险，玛雅古迹奇琴伊察，坎昆粉色海滩，地下河潜水全记录。',
+    cover: 'https://images.unsplash.com/photo-1518105779142-d97322c9d65e?w=800&q=80',
+    category: '墨西哥',
+    date: '2025-12-20',
+    readTime: '9 min'
+  }
+];
+
+const categories = ['全部', '日本', '意大利', '冰岛', '印度尼西亚', '葡萄牙', '墨西哥'];
+---
+
+<Layout title="旅行攻略 - Salt in our Hair">
+  <section class="py-12 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-4xl font-bold mb-4">旅行攻略</h1>
+      <p class="text-white/50 mb-8">每一篇都来自真实踩坑后的经验总结</p>
+
+      <!-- Categories -->
+      <div class="flex flex-wrap gap-3 mb-12">
+        {categories.map(cat => (
+          <button class:list={[
+            'tag',
+            cat === '全部' && 'bg-[#FF9398]/20 text-[#FF9398]'
+          ]}>
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      <!-- Posts Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {posts.map(post => (
+          <a href={`/blog/${post.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`} class="blog-card group block bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
+            <div class="img-zoom aspect-video">
+              <img src={post.cover} alt={post.title} class="w-full h-full object-cover" />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="tag">{post.category}</span>
+                <span class="text-white/40 text-sm">{post.readTime}</span>
+              </div>
+              <h2 class="text-xl font-bold mb-2 group-hover:text-[#FF9398] transition-colors">{post.title}</h2>
+              <p class="text-white/50 text-sm mb-4">{post.excerpt}</p>
+              <span class="text-white/30 text-sm">{post.date}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

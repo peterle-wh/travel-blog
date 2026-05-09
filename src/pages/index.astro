@@ -1,0 +1,126 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const featuredPosts = [
+  {
+    title: '巴厘岛7天6夜完整攻略',
+    excerpt: '从乌布到库塔，探索这座神庙之岛的隐藏秘境',
+    cover: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80',
+    category: '印度尼西亚',
+    date: '2026-05-01'
+  },
+  {
+    title: '日本京都赏樱指南',
+    excerpt: '避开人潮的私藏机位+和服体验攻略',
+    cover: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=80',
+    category: '日本',
+    date: '2026-04-15'
+  },
+  {
+    title: '冰岛自驾：环岛精华10日',
+    excerpt: '追逐极光、冰川徒步、火山探险完整记录',
+    cover: 'https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=800&q=80',
+    category: '冰岛',
+    date: '2026-03-20'
+  }
+];
+
+const destinations = [
+  { name: '意大利', flag: '🇮🇹', count: 12 },
+  { name: '日本', flag: '🇯🇵', count: 8 },
+  { name: '葡萄牙', flag: '🇵🇹', count: 6 },
+  { name: '希腊', flag: '🇬🇷', count: 5 },
+  { name: '墨西哥', flag: '🇲🇽', count: 4 }
+];
+---
+
+<Layout title="Salt in our Hair - 旅行博客">
+  <!-- Hero Section -->
+  <section class="min-h-[70vh] flex items-center justify-center px-6">
+    <div class="text-center max-w-4xl mx-auto">
+      <p class="text-[#FF9398] text-sm font-medium tracking-widest uppercase mb-4">Travel Blog</p>
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+        用文字记录<br />
+        <span class="text-[#FF9398]">世界的样子</span>
+      </h1>
+      <p class="text-white/60 text-lg md:text-xl max-w-2xl mx-auto mb-10">
+        专注深度旅行攻略、可持续旅行与数字游民生活。
+        每一篇文章都来自真实踩坑后的经验总结。
+      </p>
+      <div class="flex items-center justify-center gap-4">
+        <a href="/blog" class="btn-primary">
+          浏览攻略
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+        <a href="/about" class="px-6 py-3 border border-white/20 hover:border-white/40 rounded-xl transition-colors text-white/70 hover:text-white">
+          关于我们
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Destinations -->
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-2xl font-bold mb-8">探索目的地</h2>
+      <div class="flex flex-wrap gap-4">
+        {destinations.map(dest => (
+          <a href={`/blog?dest=${dest.name}`} class="flex items-center gap-3 px-5 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl transition-colors">
+            <span class="text-2xl">{dest.flag}</span>
+            <div>
+              <span class="font-medium">{dest.name}</span>
+              <span class="text-white/40 text-sm ml-2">{dest.count} 篇</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Posts -->
+  <section class="py-20 px-6 bg-gradient-to-b from-transparent to-white/5">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center justify-between mb-12">
+        <h2 class="text-3xl font-bold">精选攻略</h2>
+        <a href="/blog" class="text-[#FF9398] hover:underline">查看全部 →</a>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        {featuredPosts.map(post => (
+          <a href={`/blog/${post.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`} class="blog-card group block bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
+            <div class="img-zoom aspect-video">
+              <img src={post.cover} alt={post.title} class="w-full h-full object-cover" />
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="tag">{post.category}</span>
+                <span class="text-white/40 text-sm">{post.date}</span>
+              </div>
+              <h3 class="text-xl font-bold mb-2 group-hover:text-[#FF9398] transition-colors">{post.title}</h3>
+              <p class="text-white/50 text-sm">{post.excerpt}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="py-20 px-6">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">订阅更新</h2>
+      <p class="text-white/50 mb-8">旅行灵感、深度攻略第一时间收到</p>
+      <form class="flex gap-3 max-w-md mx-auto">
+        <input
+          type="email"
+          placeholder="你的邮箱"
+          class="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:border-[#FF9398] transition-colors"
+        />
+        <button type="submit" class="btn-primary">
+          订阅
+        </button>
+      </form>
+    </div>
+  </section>
+</Layout>
